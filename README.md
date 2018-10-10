@@ -1,2 +1,2 @@
 # My_StoreApp
-My store application to help owners manage sales and product records.
+My store manager application to help owners manage sales and product records.
