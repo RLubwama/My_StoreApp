@@ -1,6 +1,6 @@
 language: python
 python:
-  - '3.6'
+  - "3.7"
 
 #  For installing dependences
 install:
@@ -9,7 +9,8 @@ install:
 #  script to run tests
 script:
   # - py.test --cov= tests
-  - pytest
+  - nosetests --with-coverage
+  # - pytest
 
 after_success:
   - coveralls
