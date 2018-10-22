@@ -5,6 +5,9 @@ app = Flask('__name__')
 products = [{'title': 'matooke', 'price': 'Ugx 15000', 'product_id': 1}, {'title': 'Cassava', 'price': 'Ugx 2000', 'product_id': 2}, {'title': 'Rice', 'price': '200', 'product_id': 3}] 
 
 records = [{'Record1' : 'Benjamin bought matooke on 24 11 2018', 'salesID': 1}, {'Record2' : 'Arafat bought Rice on 02 11 2018', 'salesID': 2}] 
+@app.route('/')
+def index():
+    return 'welcome'
 
 @app.route('/products', methods=['POST']) 
 def add_product(): 
