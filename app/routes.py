@@ -8,10 +8,12 @@ records = [{'Record1' : 'Benjamin bought matooke on 24 11 2018', 'salesID': 1}, 
 
 @app.route('/products', methods=['POST']) 
 def add_product(): 
+    
     data = request.get_json() 
     title = data.get("title") 
     price = data.get("price") 
-    product_id = data.get("product_id") 
+    # product_id = data.get("product_id")
+    product_id = len(products) + 1
  
     if price and title: 
         return jsonify({"message": "product added"}) 
