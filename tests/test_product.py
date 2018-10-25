@@ -4,7 +4,6 @@ from app.routes import app
 
 class ProductTestCase (TestCase):
     # "initialize up a client to for testing"
-    #     self.client = app.test_client(self)
     def setUp(self):
         self.client = app.test_client(self)
     def test_delete_product(self):
