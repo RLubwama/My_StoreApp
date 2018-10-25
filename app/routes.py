@@ -53,3 +53,22 @@ def add_sales():
         return jsonify({"message": "This Sales Record has been added"}) 
     else: 
         return jsonify({"message": "Opps..!!! This record has not been added"}) 
+
+#Removing a product
+
+@app.route('/api/v1/products/<product_id>', methods=['DELETE']) 
+def delete_pdt(product_id):
+   
+     if products: #test if products is not empty
+        for product in products:
+            # if product_id == product_id[products]:
+            if product_id == product['product_id']:
+                products.remove(product)
+
+                return jsonify({"message": "This product is removed from your cart"})
+                
+                 # delete_this_product
+            else:
+                return jsonify({"message": "Try somewhere else,this product has never existed here"})
+                # product with id does not exist
+                

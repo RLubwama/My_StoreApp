@@ -1,19 +1,17 @@
-import unittest
-import pytest
-import tests
 
-class Test(unittest.TestCase):
-    products = {}
-    def product(self,product_id,name):
-        self.product_id = product_id
-        self.name = name
-        if name != products:
-            print ("product is out of stock")
-            # if condition:
-            #     pass
-            else:
-                if name = products:
-                    print("product in stock")
-                    return product
+from unittest import TestCase
+from app.routes import app
 
-
+class ProductTestCase (TestCase):
+    # "initialize up a client to for testing"
+    #     self.client = app.test_client(self)
+    def setUp(self):
+        self.client = app.test_client(self)
+    def test_delete_product(self):
+            with self.client:
+                response = self.client.delete('/api/v1/products/1')
+                self.assertEquals(response.status_code, 200)
+    
+        
+        
+                
